@@ -28,16 +28,21 @@ assets/sound/strings, pitfalls, testing). Its rules are measured facts; follow t
    - Lump 38 BFS: 0 unreachable nodes, no one-way stair links.
    - Load test: 0 script errors, 0 `unknown sound alias`.
    - Optional automated runtime test via test cvars.
-5. **Design for the player.**
+5. **Look at assets before using them.** Export every new material's image to PNG
+   (`scripts/iwi_preview.py` in the skill) and view it; names like `*_door_wood01` can point to
+   `case*` placeholder images. Preview models/positions with an in-game screenshot tour
+   (a `kr_tur`-style cvar mode that parks the camera and a PowerShell window grabber) and show the
+   user the images when they ask.
+6. **Design for the player.**
    - No visible spawns or teleports.
    - No floating props.
    - No player-blocking clips at connectpaths time.
    - Autosaves at milestones.
    - Intro fade-in, outro fade-out and `missionSuccess` chaining.
    - Keep the live AI count below ~26 so vehicles keep their riders.
-6. **Fix the whole list.** When the user reports N issues, address all N, recompile once if
+7. **Fix the whole list.** When the user reports N issues, address all N, recompile once if
    possible, re-verify every gate and report results item by item with evidence.
-7. **Respect the user.** Never push to git, publish, delete saves or shut down the computer
+8. **Respect the user.** Never push to git, publish, delete saves or shut down the computer
    unless the user explicitly asks in the current turn. Let the user do gameplay tests, and
    launch the game fullscreen without developer mode for them. Speak the user's language.
 
