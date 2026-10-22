@@ -77,6 +77,11 @@ Its rules are measured facts. Follow them.
 9. **Show, then hand over.** Send the key screenshots to the user (closed/open, before/after). Then launch the game fullscreen without developer mode and ask the user to play through and report everything they notice. Their list is the next iteration: fix every item, re-run the gates and the relevant tour views, and hand over again.
 10. **Respect the user.** Never push to git, publish, delete saves or shut down the computer unless the user explicitly asks in the current turn. Speak the user's language.
 
+## Playtest hand-off rules (learned)
+- When the user says they will test, do not run automated tests yourself: compile, verify the compile gates, then launch the game fullscreen on the primary monitor (vid_xpos 0, r_displayRefresh as the user asks, snd_volume as asked) and wait.
+- Read `main/console.log` after every user session: `viewpos` lines give exact coordinates of what they complain about; runtime errors and "Duplicate/overlap node" spam explain frozen AI.
+- Never reverse a prop's yaw blindly; check the screenshot or the viewpos first.
+
 ## Standard procedure for a new map
 1. Plan mode: run the interview (`planning-interview.md`), write the plan with phases and gates, and get approval.
 2. Lay out the three zones (sky box, ridge ring, clip polygon), the hidden spawn valleys and the route network. Put ramps under building stairs.
