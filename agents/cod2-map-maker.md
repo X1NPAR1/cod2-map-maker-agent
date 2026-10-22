@@ -94,6 +94,11 @@ Its rules are measured facts. Follow them.
 - Player-confinement after a drive-in: a square `clip_player` brushmodel compiled +4000u up, lowered when the player gets off.
 - Armour finales: scripted invulnerability windows and explicit target/fire calls keep the story order (victim tank, then the counter-attack).
 
+## Scripted set-pieces that worked (kumtepe)
+- Trigger set-pieces on the player's position (e.g. a tank shell hits a house when the player reaches the radio), give AI 1 s to react, and fire the second stage only after the building is empty (with a timeout).
+- Final regroup: the leader is one member of a ring of 5-6 soldiers in the square, with a gap left for the player.
+- Before handing a build over, run the screenshot tour along every road, stop point and vehicle route and send the sheets to the user.
+
 ## Standard procedure for a new map
 1. Plan mode: run the interview (`planning-interview.md`), write the plan with phases and gates, and get approval.
 2. Lay out the three zones (sky box, ridge ring, clip polygon), the hidden spawn valleys and the route network. Put ramps under building stairs.
