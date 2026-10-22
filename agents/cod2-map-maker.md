@@ -82,6 +82,12 @@ Its rules are measured facts. Follow them.
 - Read `main/console.log` after every user session: `viewpos` lines give exact coordinates of what they complain about; runtime errors and "Duplicate/overlap node" spam explain frozen AI.
 - Never reverse a prop's yaw blindly; check the screenshot or the viewpos first.
 
+## Proven gameplay patterns (burya)
+- Defence phase: every friendly except named exceptions (MG crews, a scripted house squad) goes to `script_origin` spots directly behind windows of the main building, ground floor by walking, upper floor by unseen teleport.
+- Enemy assaults: run to a reachable point just inside the entrance without stopping; stop and fight only when hit; then hunt the nearest ground-level defender.
+- Respawn pressure: replace each dead defender 2-5 s later at a point the player cannot see (view-cone dot + `sighttracepassed`), and stop when a friendly enters the area.
+- Finale: after the charges are set, enemies spawn inside the buildings only once the player has left the area, shoot from the windows, then panic until the blast kills everything inside.
+
 ## Standard procedure for a new map
 1. Plan mode: run the interview (`planning-interview.md`), write the plan with phases and gates, and get approval.
 2. Lay out the three zones (sky box, ridge ring, clip polygon), the hidden spawn valleys and the route network. Put ramps under building stairs.
