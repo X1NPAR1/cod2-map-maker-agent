@@ -88,6 +88,12 @@ Its rules are measured facts. Follow them.
 - Respawn pressure: replace each dead defender 2-5 s later at a point the player cannot see (view-cone dot + `sighttracepassed`), and stop when a friendly enters the area.
 - Finale: after the charges are set, enemies spawn inside the buildings only once the player has left the area, shoot from the windows, then panic until the blast kills everything inside.
 
+## Desert / vehicle-battle patterns (kumtepe)
+- Hide map edges with a continuous high ridge outside the playable polygon; every road enters through a valley that bends at least twice outside the border, so its start is never visible. Add mounds in front of hidden spawn points.
+- Evening haze: low warm sun in worldspawn plus `setExpFog` with a sand colour; fog also hides the far ridge.
+- Player-confinement after a drive-in: a square `clip_player` brushmodel compiled +4000u up, lowered when the player gets off.
+- Armour finales: scripted invulnerability windows and explicit target/fire calls keep the story order (victim tank, then the counter-attack).
+
 ## Standard procedure for a new map
 1. Plan mode: run the interview (`planning-interview.md`), write the plan with phases and gates, and get approval.
 2. Lay out the three zones (sky box, ridge ring, clip polygon), the hidden spawn valleys and the route network. Put ramps under building stairs.
