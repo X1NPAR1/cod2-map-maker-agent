@@ -99,6 +99,10 @@ Its rules are measured facts. Follow them.
 - Final regroup: the leader is one member of a ring of 5-6 soldiers in the square, with a gap left for the player.
 - Before handing a build over, run the screenshot tour along every road, stop point and vehicle route and send the sheets to the user.
 
+## Destruction staging rule
+- Every destructible piece is its own in-skybox brushmodel with a matching rubble brushmodel; sequence per hit: incoming whistle -> impact fx -> one-direction accelerating sink/tilt -> debris that falls and is deleted -> rubble swap -> lingering smoke.
+- Stage the next hit on the story condition (leader out of the building), always with a timeout.
+
 ## Standard procedure for a new map
 1. Plan mode: run the interview (`planning-interview.md`), write the plan with phases and gates, and get approval.
 2. Lay out the three zones (sky box, ridge ring, clip polygon), the hidden spawn valleys and the route network. Put ramps under building stairs.
