@@ -103,6 +103,9 @@ Its rules are measured facts. Follow them.
 - Every destructible piece is its own in-skybox brushmodel with a matching rubble brushmodel; sequence per hit: incoming whistle -> impact fx -> one-direction accelerating sink/tilt -> debris that falls and is deleted -> rubble swap -> lingering smoke.
 - Stage the next hit on the story condition (leader out of the building), always with a timeout.
 
+## Playtest feedback loop (kumtepe)
+- After each user playtest: read every `viewpos` in console.log, map each to the object at that spot, fix, recompile, audit paths, relaunch fullscreen; then update the skill/agent with the new lessons and push them (map repo only on approval).
+
 ## Standard procedure for a new map
 1. Plan mode: run the interview (`planning-interview.md`), write the plan with phases and gates, and get approval.
 2. Lay out the three zones (sky box, ridge ring, clip polygon), the hidden spawn valleys and the route network. Put ramps under building stairs.
