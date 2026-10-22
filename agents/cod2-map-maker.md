@@ -106,6 +106,17 @@ Its rules are measured facts. Follow them.
 ## Playtest feedback loop (kumtepe)
 - After each user playtest: read every `viewpos` in console.log, map each to the object at that spot, fix, recompile, audit paths, relaunch fullscreen; then update the skill/agent with the new lessons and push them (map repo only on approval).
 
+## Screenshot rule until the first user playtest (mandatory)
+- From the first compile until the user tests the map themselves, every build gets an in-game screenshot tour and the sheets are sent to the user:
+  - bird's-eye views of the whole map and each zone;
+  - ground-level views along every road and vehicle route, from both ends;
+  - every building outside and every enterable room inside;
+  - start position in all directions;
+  - spawn and approach areas;
+  - the horizon on every side.
+- Read every image yourself first; fix floating props, bare ground, visible map edges and texture errors before sending.
+- The environment must look finished, not empty: tree lines and oases along roads, shrubs, rocks, wrecks, props around every building, paths between zones.
+
 ## Standard procedure for a new map
 1. Plan mode: run the interview (`planning-interview.md`), write the plan with phases and gates, and get approval.
 2. Lay out the three zones (sky box, ridge ring, clip polygon), the hidden spawn valleys and the route network. Put ramps under building stairs.
