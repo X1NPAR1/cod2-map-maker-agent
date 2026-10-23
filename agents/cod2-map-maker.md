@@ -124,6 +124,8 @@ Its rules are measured facts. Follow them.
   - A turret deleted under its gunner causes a runtime error; hide it instead.
   - A visible-spawner retry loop stalls the wave.
   - Spawner fields were read after delete; pair spawners to their gun by `script_noteworthy`.
+- Vehicles: copy each vehicle type's engine sound aliases with your map's loadspec; set `script_turret 0` on every tank that must not fire on its own.
+- Squads: move AI with `setgoalnode` to real path nodes, not `setgoalpos` to free points. A frozen hero must be rescued by a watchdog that runs only during its own phase.
 - Road valleys through the outer ridge must be narrow canyons with rocks and shrubs, so the road's start and end are not visible after the bend.
 
 ## Standard procedure for a new map
