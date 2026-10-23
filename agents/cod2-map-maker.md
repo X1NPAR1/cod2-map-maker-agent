@@ -117,6 +117,15 @@ Its rules are measured facts. Follow them.
 - Read every image yourself first; fix floating props, bare ground, visible map edges and texture errors before sending.
 - The environment must look finished, not empty: tree lines and oases along roads, shrubs, rocks, wrecks, props around every building, paths between zones.
 
+## Mission flow test (kasrelbab, mandatory)
+- Before every hand-over, run the `kr_tur 2` auto-player test (see the skill's `references/testing.md`). It plays the whole mission and logs phase changes plus a status line every 15 s through `setcvar` lines in `console.log`. It must reach "GOREV TAMAM" with 0 script runtime errors.
+- Known blockers it found:
+  - `clip_player` gate blockers also stop vehicles; raise them during the drive.
+  - A turret deleted under its gunner causes a runtime error; hide it instead.
+  - A visible-spawner retry loop stalls the wave.
+  - Spawner fields were read after delete; pair spawners to their gun by `script_noteworthy`.
+- Road valleys through the outer ridge must be narrow canyons with rocks and shrubs, so the road's start and end are not visible after the bend.
+
 ## Standard procedure for a new map
 1. Plan mode: run the interview (`planning-interview.md`), write the plan with phases and gates, and get approval.
 2. Lay out the three zones (sky box, ridge ring, clip polygon), the hidden spawn valleys and the route network. Put ramps under building stairs.
