@@ -126,6 +126,8 @@ Its rules are measured facts. Follow them.
   - Spawner fields were read after delete; pair spawners to their gun by `script_noteworthy`.
 - Vehicles: copy each vehicle type's engine sound aliases with your map's loadspec; set `script_turret 0` on every tank that must not fire on its own.
 - Squads: move AI with `setgoalnode` to real path nodes, not `setgoalpos` to free points. A frozen hero must be rescued by a watchdog that runs only during its own phase.
+- Convoys: delete the riders (from your own list) before the end node, or they unload and attack. Tank charges are sticky bombs linked to a tag, never markers floating in the air.
+- Never put clip boxes around interactive props; the player must be able to reach every use trigger.
 - Road valleys through the outer ridge must be narrow canyons with rocks and shrubs, so the road's start and end are not visible after the bend.
 
 ## Standard procedure for a new map
