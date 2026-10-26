@@ -21,6 +21,10 @@ If the `cod2-map-maker` skill is installed, load it first. Then read the referen
 - assets, sound and strings
 - pitfalls
 - testing
+- stock map anatomy (how IW built newvillers: the quality bar)
+- prefab catalogue (370 stock prefabs by nation/theme, facing and floor rules)
+- stock scripts study (`_load` trigger keys, IW level skeleton, ambience, backdrops)
+- reverse engineering (`bsp_decompile.py`: stock map blueprint or region prefabs)
 
 Its rules are measured facts. Follow them.
 
@@ -130,6 +134,41 @@ Its rules are measured facts. Follow them.
 - Never put clip boxes around interactive props; the player must be able to reach every use trigger.
 - Truck finales: the hero boards with the beltot McGregor scene (actor plus truck door animation, then the driver idle loop). Soldiers climb in with the germantruck climbin anims played on `tag_climbnode` and stand at `tag_guy0N`. Finale actors are immortal from the moment they spawn.
 - Road valleys through the outer ridge must be narrow canyons with rocks and shrubs, so the road's start and end are not visible after the bend.
+
+## Build like Infinity Ward (stock quality, mandatory)
+- **Theme kit by nation:**
+  - American / Normandy: `newvillers` and `corevillers` prefabs.
+  - British desert: `libyatown`, `eldaba`, `matmata` and `toujane`.
+  - German: `rhine` plus newvillers stone buildings.
+  - Soviet: no stock kit, so build by hand.
+  - Ask the nation in the plan interview when it is not obvious.
+- **Buildings, wall lines and set dressing** are `misc_prefab` placements from the catalogue: floor
+  on the ground, front side to the street, destroyed variants mixed into wall rows.
+- **Split each map:** `<map>_geo.map` (visual) inside `<map>.map` (gameplay) through one
+  `misc_prefab`.
+- **Match the newvillers numbers** (`stock-map-anatomy.md` §9):
+  - patch terrain ~85 u with road edge decals;
+  - 30–60 grass/weed clumps per 1000²;
+  - nodes 50–100 u apart, ~50% cover;
+  - `clip_nosight` on foliage, `mantle_over` on low walls;
+  - a closed horizon (backdrop xmodels or meshes) with fog and cull distance set in script.
+- **Script with the stock systems first:**
+  - spawner and kill triggers;
+  - `script_killspawner` / `script_autosave` / `script_exploder` keys;
+  - `setgoalnode`;
+  - `anim_reach` / `anim_single` scenes;
+  - `_amb` ambience tracks;
+  - a `start` cvar for each section.
+- **"Make it like <stock map>":**
+  1. ASK which map and which parts (layout, specific areas, or only the mood) and whether stock
+     geometry may be copied.
+  2. Decompile the stock `.d3dbsp` (from the iwd, into a scratch folder) for a blueprint.
+  3. Cut signature areas with `--region --prefab` and place them as `misc_prefab`.
+  4. Never recompile a whole decompiled map; cod2map crashes in `tris_mergeconcave`.
+  5. Compile with the crash watcher, which closes the SANITY dialog itself.
+- **Screen capture etiquette:** during a screenshot tour the game window is set topmost on the
+  second monitor. Never capture while the user's own windows can cover it. If they did, delete
+  those images unseen.
 
 ## Standard procedure for a new map
 1. Plan mode: run the interview (`planning-interview.md`), write the plan with phases and gates, and get approval.

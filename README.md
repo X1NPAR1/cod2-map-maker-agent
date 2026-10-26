@@ -13,7 +13,7 @@ A Claude Code subagent that **builds, tests and ships complete Call of Duty 2 si
 | Phase | What the agent does | Gate |
 |---|---|---|
 | **Plan** | Interviews you in plan mode about the setting, layout, squad, enemies, vehicles, events and audio | You approve the plan |
-| **Build** | Generates terrain, buildings, roads, sky box and border ridges, path nodes and entities from Python | Generator assertions |
+| **Build** | Generates the terrain, roads, sky box and border ridges in Python. Buildings, walls and set dressing are stock prefabs of the map's nation (US/Normandy, British desert, German), placed the way Infinity Ward did in newvillers | Generator assertions, stock-quality numbers |
 | **Compile** | Runs cod2map, cod2rad and `g_connectpaths`, then decodes the AI path network | LEAK 0, no unreachable areas |
 | **Script** | Writes the mission: objectives, squad brain, waves, vehicles, scenes, sound and strings | 0 script errors, 0 unknown aliases |
 | **Visual QA** | Takes a screenshot tour with game sound off and fixes what it sees | Nothing floating, no visible sky box edge |
@@ -38,6 +38,16 @@ Ask Claude Code something like:
 > *Use the cod2-map-maker agent to build a winter outpost assault map in F:\Games\Call of Duty 2*
 
 You can also run `/agents` and pick it.
+
+## Stock reference maps
+
+If you want a map "like" a stock level (newvillers, eldaba, matmata, toujane, decoytrenches...),
+the agent first asks which parts you mean:
+- the layout as a blueprint;
+- specific areas (it decompiles the stock `.d3dbsp` and cuts them into prefabs);
+- only the mood (fog, light, ambience, backdrops).
+
+It then builds the map from those pieces.
 
 ## Principles
 
