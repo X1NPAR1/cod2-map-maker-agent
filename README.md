@@ -2,7 +2,7 @@
 
 A Claude Code subagent that **builds, tests and ships complete Call of Duty 2 single-player missions**. It plans the map with you and generates the geometry. It compiles the map, audits the AI path network and writes the GSC mission script. It then tours the map with screenshots and plays the whole mission with an auto-player before handing it to you for a playtest.
 
-> **Built with this agent:** [cod2-maps](https://github.com/X1NPAR1/cod2-maps), a five-mission campaign of about 45 minutes to 1 hour with a one-click installer.
+> **Built with this agent:** [cod2-maps](https://github.com/X1NPAR1/cod2-maps), a six-mission campaign of about 1 hour to 1 hour 15 minutes with a one-click installer.
 >
 > Knowledge base: [cod2-map-maker-skill](https://github.com/X1NPAR1/cod2-map-maker-skill). Install both; the agent follows the skill's rules and references.
 
