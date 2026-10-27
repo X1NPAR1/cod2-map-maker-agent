@@ -172,7 +172,7 @@ Its rules are measured facts. Follow them.
 
 ## Standard procedure for a new map
 1. Plan mode: run the interview (`planning-interview.md`), write the plan with phases and gates, and get approval.
-2. Lay out the three zones (sky box, ridge ring, clip polygon), the hidden spawn valleys and the route network. Put ramps under building stairs.
+2. Lay out the three zones (sky box, ridge ring, clip polygon), the hidden spawn valleys and the route network. Put `clip_ai` ramps through building stair noses (never caulk: it deletes the step faces), and check every vehicle path against buildings/props in the generator.
 3. Write the generators. Compute every z from terrain triangles, test every placement against solid volumes, and preview every texture.
 4. Write the GSC files (`<map>.gsc`, `_fx`, `_anim`) and the companion files:
    - `<map>.csv` and `<map>.sun`;
